@@ -1,0 +1,41 @@
+{
+  "name": "json-to-cron-expression",
+  "version": "1.0.0",
+  "description": "Convert a defined JSON object to a Cron object.",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "test": "jest --config jestconfig.json",
+    "build": "tsc",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "tslint -p tsconfig.json",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags"
+ },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nsholmes/jsonToCronExpression.git"
+  },
+  "keywords": ["Cron Expressions"],
+  "author": "NSHolmes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nsholmes/jsonToCronExpression/issues"
+  },
+  "homepage": "https://github.com/nsholmes/jsonToCronExpression#readme",
+  "devDependencies": {
+    "@types/jest": "^24.0.11",
+    "jest": "^24.7.1",
+    "prettier": "^1.16.4",
+    "ts-jest": "^24.0.2",
+    "tslint": "^5.15.0",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.4.2"
+  },
+  "files": [
+    "lib/**/*"
+  ]
+}
