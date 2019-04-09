@@ -6,7 +6,8 @@
   "types": "lib/index.d.ts",
   "scripts": {
     "test": "jest --config jestconfig.json",
-    "build": "tsc",
+    "build": "tsc --watch",
+    "run": "node ./lib/index.js",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
     "lint": "tslint -p tsconfig.json",
     "prepare": "npm run build",
@@ -14,12 +15,14 @@
     "preversion": "npm run lint",
     "version": "npm run format && git add -A src",
     "postversion": "git push && git push --tags"
- },
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nsholmes/jsonToCronExpression.git"
   },
-  "keywords": ["Cron Expressions"],
+  "keywords": [
+    "Cron Expressions"
+  ],
   "author": "NSHolmes",
   "license": "ISC",
   "bugs": {
@@ -37,5 +40,10 @@
   },
   "files": [
     "lib/**/*"
-  ]
+  ],
+  "dependencies": {
+    "@types/core-js": "^2.5.0",
+    "core-js": "^3.0.1",
+    "core-js-pure": "^3.0.1"
+  }
 }
